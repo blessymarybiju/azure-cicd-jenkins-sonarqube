@@ -1,14 +1,14 @@
 provider "azurerm" {
-  features = {}
+  features {}
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = var.resource_group_name
-  location = var.location
+  name     = "example-resources"
+  location = "East US"
 }
 
 resource "azurerm_storage_account" "example" {
-  name                     = var.storage_account_name
+  name                     = "examplestoracc1808"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier             = "Standard"
